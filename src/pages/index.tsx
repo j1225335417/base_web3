@@ -1,34 +1,80 @@
-import Image from "next/image";
-import localFont from "next/font/local";
+import Image from 'next/image';
+import localFont from 'next/font/local';
+import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { showNotification } from '@/redux/modules/notificationSlice';
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+  src: './fonts/GeistVF.woff',
+  variable: '--font-geist-sans',
+  weight: '100 900',
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+  src: './fonts/GeistMonoVF.woff',
+  variable: '--font-geist-mono',
+  weight: '100 900',
 });
-
+import { useEffect } from 'react';
 export default function Home() {
+  const dispatch = useDispatch();
+  const { t } = useTranslation();
+  useEffect(() => {
+    const fetchHello = async () => {
+      const response = await fetch(
+        '/api/user',
+
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            address: '0xE3a463d743F762D538031BAD3f1E748BB41f96ec',
+          }),
+        }
+      );
+      const data = await response.json();
+      console.log(data.message); // 输出: "Hello, TypeScript!"
+    };
+    fetchHello();
+  }, []);
   return (
     <div
       className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
     >
+      {/* <Button type="primary" onClick={() => {}}>
+        显示通知
+      </Button> */}
+      <div>
+        <h1>{t('greeting')}</h1>
+        <p>{t('welcomeMessage')}</p>
+      </div>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
           src="/next.svg"
           alt="Next.js logo"
+          onClick={() => {
+            // notification.success({
+            //   message: '成功通知',
+            //   description: '这是一个成功的消息通知。',
+            //   placement: 'topRight',
+            // });
+            dispatch(
+              showNotification({
+                type: 'success',
+                message: 'Success!',
+                description: 'This is a success message.',
+              })
+            );
+          }}
           width={180}
           height={38}
           priority
         />
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
-            Get started by editing{" "}
+            Get started by editing{' '}
             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
               src/pages/index.tsx
             </code>

@@ -1,0 +1,21 @@
+{
+  "greeting": "Hello",
+  "welcomeMessage": "Welcome to our website!",
+  "language": {
+    "en": "English",
+    "zh": "Chinese"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "connect": "Connect",
+  "logout": "Logout",
+  "nav":{
+    "nft":"NFT",
+    "buy":"buy",
+    "roadmap":"roadmap",
+    "team":"team",
+    "about":"about"
+  }
+}

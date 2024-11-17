@@ -1,0 +1,23 @@
+{
+  "greeting": "こんにちは",
+  "welcomeMessage": "私たちのウェブサイトへようこそ！",
+  "language": {
+    "english": "英語",
+    "chinese": "中国語",
+    "japanese": "日本語",
+    "selectLanguage": "言語"
+  },
+  "theme": {
+    "light": "ライトモード",
+    "dark": "ダークモード"
+  },
+  "connect": "接続",
+  "logout": "ログアウト",
+  "nav": {
+    "nft": "NFT",
+    "buy": "購入",
+    "roadmap": "ロードマップ",
+    "team": "チーム",
+    "about": "について"
+  }
+}

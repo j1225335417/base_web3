@@ -1,4 +1,4 @@
-import { post, get } from '@/config/axios';
+import { post, get } from '@/config/axiosConfig';
 
 import { ApiResult } from '@/services/types';
 export const nonce = async ({

@@ -88,9 +88,7 @@ const Header: React.FC = () => {
       }}
       className={`${
         isIndexHeader ? 'text-white ' : 'bg-[#ffffff]'
-      } flex w-full flex-wrap items-center justify-between p-4  shadow-md sm:flex-nowrap  z-10 ${
-        isIndexHeader ? 'fixed' : 'sticky'
-      } top-0`}
+      } flex w-full flex-wrap items-center justify-between p-4  shadow-md sm:flex-nowrap  z-10 fixed  top-0`}
     >
       <div className="flex items-center relative  cursor-pointer">
         <Image

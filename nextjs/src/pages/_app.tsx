@@ -12,7 +12,10 @@ import Footer from '@/components/layout/Footer';
 import React from 'react';
 import '@/config/i18nConfig';
 const queryClient = new QueryClient();
+import { useRouter } from 'next/router';
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  console.log('router', router);
   return (
     <React.StrictMode>
       <WagmiProvider config={config}>
@@ -22,7 +25,12 @@ export default function App({ Component, pageProps }: AppProps) {
               <div className="flex flex-col">
                 <Header />
 
-                <div style={{ minHeight: 'calc(100vh - 79px - 224px)' }}>
+                <div
+                  style={{
+                    minHeight: 'calc(100vh - 79px - 224px)',
+                    paddingTop: router.pathname === '/' ? '0px' : '79px',
+                  }}
+                >
                   <Component {...pageProps} />
                 </div>
 

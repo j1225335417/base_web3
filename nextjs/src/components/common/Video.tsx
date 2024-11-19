@@ -1,12 +1,20 @@
 import { useRef, useEffect, useState } from 'react';
 
-const Video: React.FC<{
+interface VideoComponentProps {
   threshold?: number;
   url: string;
   size?: { width: number; height: number };
   intersectingCallBack?: (isIntersecting: boolean) => void;
   loadedCallBack?: Function;
-}> = ({ threshold = 0.1, url, size, intersectingCallBack, loadedCallBack }) => {
+}
+
+const Video: React.FC<VideoComponentProps> = ({
+  threshold = 0.5,
+  url,
+  size,
+  intersectingCallBack,
+  loadedCallBack,
+}) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const [videoHeight, setVideoHeight] = useState<number>();
@@ -39,11 +47,12 @@ const Video: React.FC<{
             // 视频离开视口，暂停播放
             videoRef.current?.pause();
           }
+          console.log('isIntersecting', entry.isIntersecting);
           intersectingCallBack!(entry.isIntersecting);
         });
       },
       {
-        threshold: threshold, // 当视频有50%进入视口时触发
+        threshold: [0.1, 0.2], // 当视频有50%进入视口时触发
       }
     );
 

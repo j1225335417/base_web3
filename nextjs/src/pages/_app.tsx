@@ -2,7 +2,7 @@ import '@/styles/globals.css';
 import '@rainbow-me/rainbowkit/styles.css';
 import { AppProps } from 'next/app';
 import { WagmiProvider } from 'wagmi';
-import config from '@/config/wagmi';
+import config from '@/config/wagmiConfig';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { Provider as ReduxProvider } from 'react-redux';

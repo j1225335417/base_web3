@@ -27,10 +27,13 @@ const notificationSlice = createSlice({
     clearNotification: () => {
       return initialState;
     },
+    loadNotification: () => {
+      return initialState;
+    },
   },
 });
 
-export const { showNotification, clearNotification } =
+export const { showNotification, clearNotification, loadNotification } =
   notificationSlice.actions;
 
 export default notificationSlice.reducer;

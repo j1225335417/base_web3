@@ -3,6 +3,7 @@ import { Middleware } from '@reduxjs/toolkit';
 import {
   showNotification,
   clearNotification,
+  loadNotification,
 } from '../modules/notificationSlice';
 
 let notification: any = null;
@@ -12,13 +13,7 @@ export const notificationMiddleware: Middleware =
     // 监听 showNotification 动作
     if (showNotification.match(action)) {
       const { type, message, description, duration } = action.payload;
-
-      // 动态加载 antd notification
-      if (!notification) {
-        const antd = await import('antd');
-        notification = antd.notification;
-      }
-
+      notification = await getNotification();
       // 调用 antd 的 notification 方法
       notification[type]({
         message,
@@ -32,6 +27,18 @@ export const notificationMiddleware: Middleware =
     if (clearNotification.match(action)) {
       notification.destroy();
     }
+    if (loadNotification.match(action)) {
+      // 动态加载 antd notification
+      notification = await getNotification();
+    }
 
     return next(action);
   };
+
+const getNotification = async () => {
+  if (!notification) {
+    const antd = await import('antd');
+    notification = antd.notification;
+  }
+  return notification;
+};

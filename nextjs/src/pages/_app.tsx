@@ -11,8 +11,6 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import React from 'react';
 import '@/config/i18nConfig';
-// import '@ant-design/css';
-// import 'antd/dist/antd.css';
 const queryClient = new QueryClient();
 export default function App({ Component, pageProps }: AppProps) {
   return (

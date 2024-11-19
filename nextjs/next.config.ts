@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
     // 确保这个设置放在配置的根级别
     ignoreDuringBuilds: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ezek.io',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

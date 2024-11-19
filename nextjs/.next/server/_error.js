@@ -10402,7 +10402,7 @@ module.exports = import("wagmi/chains");;
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"greeting":"Hello","welcomeMessage":"Welcome to our website!","language":{"en":"English","zh":"Chinese"},"theme":{"light":"Light","dark":"Dark"},"connect":"Connect","logout":"Logout","nav":{"nft":"NFT","buy":"buy","roadmap":"roadmap","team":"team","about":"about"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"greeting":"Hello","welcomeMessage":"Welcome to our website!","language":{"en":"English","zh":"Chinese"},"theme":{"light":"Light","dark":"Dark"},"connect":"Connect","logout":"Logout","nav":{"nft":"NFT","buy":"Buy","roadmap":"Roadmap","team":"Team","about":"About"}}');
 
 /***/ }),
 

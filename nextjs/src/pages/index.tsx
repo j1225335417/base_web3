@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { showNotification } from '@/redux/modules/notificationSlice';
 import Video from '@/components/common/Video';
 import Image from 'next/image';
+import Button from '@/components/common/Button';
 const introductions = [
   {
     title: 'Phanta Bear',
@@ -89,7 +90,7 @@ const Index = () => {
 
   return (
     <div>
-      <div className="relative">
+      <div className="relative ">
         <Video
           // size={{ width: 1920, height: 1080 }}
           url={
@@ -108,7 +109,16 @@ const Index = () => {
           src="https://ezek.io/static/phanta-5c2ead1b2f692f62608121e219ccdf95.png"
         ></Image>
 
-        <div
+        <Button
+          onClick={() => clickOpensea()}
+          customerClassName={
+            videoLoaded
+              ? 'bottom-10 opacity-100 duration-300'
+              : 'bottom-0 opacity-0 '
+          }
+        />
+
+        {/* <div
           className={`transition-all duration-200 transform active:scale-95 relative ${
             videoLoaded ? 'bottom-20 opacity-100 ' : 'bottom-0 opacity-0 '
           }`}
@@ -125,7 +135,7 @@ const Index = () => {
           >
             <span className="text-1xl md:text-3xl">去OPENSEA查看</span>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="px-6 md:px-28  w-full overflow-hidden">
         <div className="flex pt-10 justify-center items-center ">

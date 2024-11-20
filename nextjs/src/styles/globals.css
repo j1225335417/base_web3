@@ -20,3 +20,18 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.dotted-grid-background {
+  background-color: #f6f7ff;
+  background-image: linear-gradient(#d6dbff 1px, transparent 0),
+    linear-gradient(90deg, #d6dbff 1px, transparent 0);
+  background-size: 25px 25px, 25px 25px;
+  bottom: 0;
+  -webkit-clip-path: polygon(100% 0, 90% 100%, 0 100%, 0 0);
+  clip-path: polygon(100% 0, 90% 100%, 0 100%, 0 0);
+  content: '';
+  height: 100%;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+}

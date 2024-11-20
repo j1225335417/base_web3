@@ -15,7 +15,7 @@ module.exports = {
           dark: '#ea3378', // 晚上选中颜色
         },
         background: {
-          light: '#fafafa', // 白天背景颜色
+          light: '#f6f7ff', // 白天背景颜色
           dark: '#1f1f1f', // 晚上背景颜色
         },
         btnbg: '#182def',

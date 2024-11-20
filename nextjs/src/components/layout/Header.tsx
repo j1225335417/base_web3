@@ -87,7 +87,9 @@ const Header: React.FC = () => {
           : '',
       }}
       className={`${
-        isIndexHeader ? 'text-white ' : 'bg-[#ffffff]'
+        isIndexHeader
+          ? 'text-white '
+          : 'bg-background-light  dark:bg-background-dark'
       } flex w-full flex-wrap items-center justify-between p-4  shadow-md sm:flex-nowrap  z-10 fixed  top-0`}
     >
       <div className="flex items-center relative  cursor-pointer">
@@ -97,7 +99,7 @@ const Header: React.FC = () => {
           height={50}
           width={150}
           objectFit="contain"
-          className="cursor-pointer"
+          className="cursor-pointer relative bottom-1"
           onClick={handleClick}
         />
         {/* <Image src="/favicon.ico" alt="Web3" width={50} height={50} /> */}

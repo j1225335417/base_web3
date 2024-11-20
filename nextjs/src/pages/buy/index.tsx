@@ -4,7 +4,7 @@ const PhantaCard = () => {
   const [w, setW] = useState(0);
   const leftRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
       for (let entry of entries) {
         const height = entry.contentRect.height; // 高度
@@ -69,11 +69,11 @@ const PhantaCard = () => {
             clipPath: 'polygon(12% 0 ,100% 0, 100% 100%,0 100%)',
           }}
         >
-          <div className=" z-10  text-center flex flex-col justify-center items-center w-full pt-16 relative">
+          <div className=" z-10  text-center flex flex-col justify-center items-center w-full pt-16">
             <div className="text-center text-6xl">Phanta Bear</div>
 
             <div
-              className="w-[70%] bg-no-repeat bg-cover bg-center p-10 mt-10 "
+              className="w-[70%] bg-no-repeat bg-cover bg-center p-10 mt-10  border-gray-500"
               style={{
                 backgroundImage:
                   "url('https://ezek.io/static/contentBk-6bb669f15a5ff7437537e6481af9b19e.png')",
@@ -88,7 +88,23 @@ const PhantaCard = () => {
               </p>
             </div>
 
-            <Button customerClassName="" buttonText="登录" />
+            <div className="mt-20">
+              <Button
+                buttonPadding="px-10 md:px-16 py-4"
+                buttonText="登录"
+                customerClassName={`  w-[188px] h-[80px]`}
+                onClick={() => {}}
+              />
+            </div>
+
+            <div className="text-start my-10 leading-10">
+              <p className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-6 before:h-6 before:bg-no-repeat before:bg-contain before:bg-[url('https://ezek.io/static/bearIcon-c3e1fb9fb014288f467071aea07f9b77.svg')]">
+                如何在谷歌浏览器上安装和使用MetaMask钱包?
+              </p>
+              <p className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-6 before:h-6 before:bg-no-repeat before:bg-contain before:bg-[url('https://ezek.io/static/bearIcon-c3e1fb9fb014288f467071aea07f9b77.svg')]">
+                如何购买以太币并转移到Web3钱包（含Coinbase）?
+              </p>
+            </div>
           </div>
 
           <div

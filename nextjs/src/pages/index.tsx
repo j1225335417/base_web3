@@ -110,13 +110,14 @@ const Index = () => {
         ></Image>
 
         <Button
-          onClick={() => clickOpensea()}
-          customerClassName={
+          customerClassName={`${
             videoLoaded
-              ? 'bottom-10 opacity-100 duration-300'
-              : 'bottom-0 opacity-0 '
-          }
+              ? 'bottom-36 opacity-100 duration-300'
+              : 'bottom-0 opacity-0'
+          } absolute left-1/2 -translate-x-1/2 md:w-[316px] w-[185px]`}
+          onClick={() => clickOpensea()}
         />
+        {/* </div> */}
 
         {/* <div
           className={`transition-all duration-200 transform active:scale-95 relative ${

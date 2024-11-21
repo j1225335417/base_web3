@@ -90,7 +90,7 @@ const Header: React.FC = () => {
         isIndexHeader
           ? 'text-white '
           : 'bg-background-light  dark:bg-background-dark'
-      } flex w-full flex-wrap items-center justify-between p-4  shadow-md sm:flex-nowrap  z-10 fixed  top-0`}
+      } flex w-full flex-wrap items-center justify-between p-4  shadow-md sm:flex-nowrap  z-[999] fixed  top-0`}
     >
       <div className="flex items-center relative  cursor-pointer">
         <Image

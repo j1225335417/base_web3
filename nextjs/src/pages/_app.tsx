@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import '@/styles/pagination.css'; // 引入自定义样式
 import '@rainbow-me/rainbowkit/styles.css';
 import { AppProps } from 'next/app';
 import { WagmiProvider } from 'wagmi';

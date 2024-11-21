@@ -19,6 +19,7 @@ module.exports = {
           dark: '#1f1f1f', // 晚上背景颜色
         },
         btnbg: '#182def',
+        redbg: '#ea3378',
       },
     },
   },

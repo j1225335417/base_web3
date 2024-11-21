@@ -9,10 +9,11 @@ const Button = ({
   customerClassName = '',
   border = false,
   buttonPadding = 'px-7 md:px-10 py-4',
+  offset = '10px',
 }) => {
   return (
     <div className={`${customerClassName}`}>
-      <div className="transition-all  active:scale-95 relative">
+      <div className="transition-all  active:scale-95 relative -translate-x-[5px]">
         <div
           onClick={onClick}
           style={{

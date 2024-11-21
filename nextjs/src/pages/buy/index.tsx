@@ -2,9 +2,12 @@ import React, { useEffect, useLayoutEffect, useState, useRef } from 'react';
 import Button from '@/components/common/Button';
 import DoubleBox from '@/components/common/DoubleBox';
 import { bearBg, add, reduce } from '@/assets/buy';
+const leftWidth = 507;
 const PhantaCard = () => {
   const [w, setW] = useState(0);
   const leftRef = useRef<HTMLDivElement>(null);
+  const leftBottomLineRef = useRef<HTMLDivElement>(null);
+  const [leftOffsetPlygon, setLeftOffsetPlygon] = useState(0);
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
@@ -16,6 +19,7 @@ const PhantaCard = () => {
         const angleInRadians = (angle * Math.PI) / 180;
         // 计算角对面的边 a = h * tan(θ)
         const calculatedLength = height * Math.tan(angleInRadians);
+        console.log(calculatedLength);
         setW(Math.floor(calculatedLength));
       }
     });
@@ -30,6 +34,30 @@ const PhantaCard = () => {
       }
     };
   }, []);
+
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver((entries) => {
+      console.log('entries', entries);
+      for (let entry of entries) {
+        const width = entry.contentRect.width; // 高度
+
+        const a = Math.floor((width / leftWidth) * 100);
+        console.log('leftBottomLineRef-width', width, a);
+        setLeftOffsetPlygon(a + 1);
+      }
+    });
+
+    if (leftBottomLineRef.current) {
+      resizeObserver.observe(leftBottomLineRef.current); // 开始监听容器
+    }
+
+    return () => {
+      if (leftBottomLineRef.current) {
+        resizeObserver.unobserve(leftBottomLineRef.current); // 清理观察器
+      }
+    };
+  }, []);
+
   const LeftContent = (
     <DoubleBox customerClassName="w-[300px] h-[470px]">
       <div className="w-full h-full ">
@@ -111,9 +139,10 @@ const PhantaCard = () => {
         <div
           ref={leftRef}
           style={{
-            clipPath: 'polygon(0 0,100% 0, 79% 100%,0 100%)',
+            clipPath: `polygon(0 0,100% 0 ,${leftOffsetPlygon}% 100%,0 100%)`,
+            width: `${leftWidth}px`,
           }}
-          className="relative   overflow-hidden   pr-10"
+          className={`relative   overflow-hidden   `}
         >
           <div
             style={{
@@ -122,6 +151,7 @@ const PhantaCard = () => {
               width: '100%',
               height: '100%',
               backgroundSize: '25px 25px',
+              backgroundClip: 'content-box',
             }}
           >
             <div className=" z-10   p-20 relative right-7">{LeftContent}</div>
@@ -129,6 +159,7 @@ const PhantaCard = () => {
             <div className="absolute top-0 left-0 h-[1px] w-full bg-red-500 z-5"></div>
             <div className="absolute top-0 left-0 w-[1px] h-full bg-red-500 z-5"></div>
             <div
+              ref={leftBottomLineRef}
               style={{ width: `calc(100% - ${w}px)` }}
               className={`absolute bottom-0 left-0 h-[1px] bg-red-500 z-5`}
             ></div>

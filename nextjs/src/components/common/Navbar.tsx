@@ -6,7 +6,10 @@ interface Nav {
   path: string;
   name: string;
 }
-const Navbar = forwardRef<NavMethods>((props, ref) => {
+interface Props {
+  routerOnChange?: (path: string) => void;
+}
+const Navbar = forwardRef<NavMethods, Props>(({ routerOnChange }, ref) => {
   const { t } = useTranslation();
   const router = useRouter();
   const [path, setPath] = useState('/');
@@ -44,16 +47,29 @@ const Navbar = forwardRef<NavMethods>((props, ref) => {
   const navClick = (item: Nav) => {
     router.push(item.path);
     setPath(item.path);
+
+    if (routerOnChange) {
+      routerOnChange(item.path);
+    }
   };
   return (
     <nav>
-      <div className="  lg:pr-16 xl:pr-24 ">
-        <div className="hidden  md:flex md:space-x-10   xl:space-x-24  ">
+      <div className=" h-full bg-white max-md:text-primary-light md:bg-transparent  lg:pr-16 xl:pr-24 ">
+        <div className=" flex flex-col space-y-10   md:flex-row md:space-x-10 md:space-y-0   xl:space-x-24  ">
+          <a
+            onClick={() => navClick({ path: '/', name: '主页' })}
+            className={`md:hidden cursor-pointer text-sm md:text-xl  hover:text-highlight-light ${
+              path === '/' ? 'text-highlight-light' : ''
+            }`}
+          >
+            主页
+          </a>
+
           {navs.map((item) => (
             <a
               key={item.path}
               onClick={() => navClick(item)}
-              className={`cursor-pointer text-xl  hover:text-highlight-light ${
+              className={`cursor-pointer text-sm md:text-xl  hover:text-highlight-light ${
                 path === item.path ? 'text-highlight-light' : ''
               }`}
             >

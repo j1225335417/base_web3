@@ -5,7 +5,7 @@ const Button = ({
   buttonText = '去OPENSEA查看', // 默认按钮文本
   innerBgColor = 'bg-btnbg', // 内层按钮背景颜色
   outerBgColor = 'bg-white', // 内层按钮背景颜色
-  textColor = 'color-btnbg', // 外层按钮文字颜色
+  textColor = 'text-btnbg', // 外层按钮文字颜色
   customerClassName = '',
   border = false,
   buttonPadding = 'px-7 md:px-10 py-4',
@@ -13,7 +13,7 @@ const Button = ({
 }) => {
   return (
     <div className={`${customerClassName}`}>
-      <div className="transition-all  active:scale-95 relative -translate-x-[5px]">
+      <div className="transition-all  active:scale-95 relative -translate-x-[5px] z-10">
         <div
           onClick={onClick}
           style={{

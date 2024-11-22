@@ -43,7 +43,7 @@ const PhantaCard = () => {
 
         const a = Math.floor((width / leftWidth) * 100);
         console.log('leftBottomLineRef-width', width, a);
-        setLeftOffsetPlygon(a + 1);
+        setLeftOffsetPlygon(a);
       }
     });
 
@@ -59,7 +59,10 @@ const PhantaCard = () => {
   }, []);
 
   const LeftContent = (
-    <DoubleBox customerClassName="w-[300px] h-[470px]">
+    <DoubleBox
+      customerClassName="w-[300px] h-[470px]"
+      outerClassName="border-l-[2px] border-t-[1px] border-b-[1px] border-r-[1px] border-solid border-btnbg"
+    >
       <div className="w-full h-full ">
         <div
           style={{ background: `url('${bearBg}')` }}
@@ -165,7 +168,7 @@ const PhantaCard = () => {
             ></div>
             <div
               style={{ right: w / 2 + 'px' }}
-              className="absolute top-[-10px]  w-[1px] bottom-[-10px] bg-red-500 z-5 transform rotate-[10deg]"
+              className="absolute top-[-10px]  w-[2px] bottom-[-10px] bg-red-500 z-5 transform rotate-[10deg]"
             ></div>
           </div>
         </div>
@@ -187,7 +190,7 @@ const PhantaCard = () => {
                 backgroundSize: '100% 100%', // Stretch the image to fill the div completely
               }}
             >
-              <p className="text-2xl">
+              <p className="text-2xl dark:text-btnbg">
                 Phanta Bear 是10,000 个随机生成的数字收藏品，同时可兼作 Ezek
                 Club 的会员卡。每只Phanta
                 Bear都是独特的，都会解锁不同的等级和会员权益。Phanta Bear项目由

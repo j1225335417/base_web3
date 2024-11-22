@@ -1,6 +1,8 @@
 // pages/index.tsx
 import { useEffect, useState } from 'react';
-const Home: React.FC = () => {
+const Home: React.FC<{
+  themeChange?: (theme: string | null) => void;
+}> = ({ themeChange }) => {
   const [theme, setTheme] = useState<string | null>(null);
   // 初始化时检查 localStorage 中的主题设置
   useEffect(() => {
@@ -30,7 +32,7 @@ const Home: React.FC = () => {
       localStorage.setItem('theme', newTheme);
     };
     mediaQuery.addEventListener('change', handleChange);
-
+    themeChange?.(theme);
     // 清理事件监听器
     return () => {
       mediaQuery.removeEventListener('change', handleChange);

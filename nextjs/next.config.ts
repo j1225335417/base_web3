@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'ezek.io',
       },
+      { protocol: 'https', hostname: 'phanta-bear-nft.matrixlabs.org' },
     ],
   },
 };

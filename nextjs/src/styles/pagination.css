@@ -4,21 +4,33 @@
 .ant-pagination-item {
   background: none !important;
   border: none !important;
+}
+
+.ant-pagination-item a {
   color: #000 !important; /* 自定义文字颜色 */
   font-size: 25px;
 }
 
-.ant-pagination .ant-pagination-item-active a {
-  color: #ef4444; /* 设置选中页文字颜色 */
+.dark .ant-pagination-item a {
+  background: none !important;
+  border: none !important;
+  color: #ffffff !important; /* 自定义文字颜色 */
+  font-size: 25px;
 }
-.ant-pagination .ant-pagination-item-active a:hover {
-  color: #ef4444; /* 设置选中页文字颜色 */
-}
-/* .ant-pagination .ant-pagination-item{
 
-  color: blue !important;
+.dark .ant-pagination .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-ellipsis {
+  color: #ffffff !important; /* 自定义文字颜色 */
 }
-.ant-pagination .ant-pagination-item:hover {
-  background-color: #f0f0f0 !important; 
-  color: blue !important;
-} */
+
+.ant-pagination-item-active a {
+  background: none !important;
+  border: none !important;
+  color: #ef4444 !important; /* 自定义文字颜色 */
+  font-size: 25px;
+}
+.ant-pagination-item a:hover {
+  background: none !important;
+  border: none !important;
+  color: #ef4444 !important; /* 自定义文字颜色 */
+  font-size: 25px;
+}

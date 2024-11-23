@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useState, useRef } from 'react';
 import Button from '@/components/common/Button';
-import DoubleBox from '@/components/common/DoubleBox';
+
 import { bearBg, add, reduce } from '@/assets/buy';
 const leftWidth = 507;
 const PhantaCard = () => {
@@ -59,11 +59,8 @@ const PhantaCard = () => {
   }, []);
 
   const LeftContent = (
-    <DoubleBox
-      customerClassName="w-[300px] h-[470px]"
-      outerClassName="border-l-[2px] border-t-[1px] border-b-[1px] border-r-[1px] border-solid border-btnbg"
-    >
-      <div className="w-full h-full ">
+    <div className="w-[300px] h-[470px] mt-10 border-l-[2px] border-t-[1px] border-b-[1px] border-r-[1px] border-solid border-btnbg">
+      <div className="w-full h-full shadow-[7px_7px_0_0_theme(colors.btnbg)] md:shadow-[10px_10px_0_0_theme(colors.btnbg)]">
         <div
           style={{ background: `url('${bearBg}')` }}
           className={`w-full aspect-square  relative`}
@@ -92,18 +89,16 @@ const PhantaCard = () => {
           </div>
         </div>
       </div>
-    </DoubleBox>
+    </div>
   );
 
   const loginButton = (
     <Button
-      textColor="text-white"
-      outerBgColor="bg-redbg"
-      buttonPadding="px-10 md:px-16 py-4"
-      buttonText="登录"
-      customerClassName={`  w-[120px] md:w-[200px] h-[80px]`}
+      customClassName="md:shadow-[7px_7px_0_0_theme(colors.btnbg)]"
       onClick={() => {}}
-    />
+    >
+      登录
+    </Button>
   );
 
   const ProblemList = () => {

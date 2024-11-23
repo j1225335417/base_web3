@@ -6,6 +6,7 @@ const defaultImage =
   'https://ezek.io/static/holder-60ea5c8bba0127cf538af73c05b1acf3.png';
 
 import Pagination from '@/components/common/Pagination';
+import { useRouter } from 'next/router';
 const App = () => {
   const [nfts, setNfts] = useState<any[]>([]);
   const [totalPages, setTotalPages] = useState(0);
@@ -13,7 +14,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const itemsPerPage = 10; // 每页显示的项目数量
-
+  const router = useRouter();
   const fetchNfts = async (page: number) => {
     try {
       const response = await fetch(
@@ -109,7 +110,13 @@ const App = () => {
           <div className="p-1 md:p-2 border-[1px] border-solid border-btnbg mt-8">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4   gap-0 sm:gap-1 md:gap-4  border-[1px] border-solid border-btnbg">
               {nfts.map((nft) => (
-                <div key={nft.id} className="p-2 md:p-4 aspect-square">
+                <div
+                  key={nft.id}
+                  className="p-2 md:p-4 aspect-square"
+                  onClick={() => {
+                    router.push('/nft/' + nft.collectionId + '/' + nft.tokenId);
+                  }}
+                >
                   <Image
                     src={nft.image}
                     alt={nft.name}

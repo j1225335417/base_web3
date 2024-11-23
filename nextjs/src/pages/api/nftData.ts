@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import NftData from '@/models/NftData'; // 假设您已经定义了 NftData 模型
 
-interface Nft {
+export interface Nft {
   id: number;
   collectionId: string | null;
   tokenId: number | null;

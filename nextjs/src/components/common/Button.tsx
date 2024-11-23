@@ -1,55 +1,31 @@
-import React from 'react';
+import React, { FC, ReactNode } from 'react';
 
+interface ButtonProps {
+  onClick?: () => void; // 点击事件支持泛型参数
+  children: ReactNode; // 子节点
+  textCustomClassName?: string; // 自定义文字样式
+  customClassName?: string; // 自定义按钮样式
+  border?: string; // 边框样式
+  buttonPadding?: string; // 按钮的内边距样式
+}
 const Button = ({
-  onClick = () => {}, // 默认点击事件为空函数
-  buttonText = '去OPENSEA查看', // 默认按钮文本
-  innerBgColor = 'bg-btnbg', // 内层按钮背景颜色
-  outerBgColor = 'bg-white', // 内层按钮背景颜色
-  textColor = 'text-btnbg', // 外层按钮文字颜色
-  customerClassName = '',
-  border = false,
+  onClick,
+  children,
+  textCustomClassName,
+  customClassName,
+  border = 'border-solid border-[1px] border-btnbg',
   buttonPadding = 'px-7 md:px-10 py-4',
-  offset = '10px',
-}) => {
+}: ButtonProps) => {
   return (
-    <div className={`${customerClassName}`}>
-      <div className="transition-all  active:scale-95 relative -translate-x-[5px] z-10">
+    <div className="transition-all active:scale-95 relative">
+      <div
+        onClick={() => onClick?.()} // 点击时调用事件
+        className={`shadow-[3px_3px_0_0_theme(colors.btnbg)] font-bold bg-white cursor-pointer ${buttonPadding} ${border} ${customClassName}`}
+      >
         <div
-          onClick={onClick}
-          style={{
-            width: 'fit-content',
-            whiteSpace: 'nowrap', // 强制不换行
-            overflow: 'hidden', // 溢出隐藏
-            textOverflow: 'ellipsis', // 文字溢出省略
-          }}
-          className={`z-10 absolute font-bold left-0 right-0   cursor-pointer ${buttonPadding} ${
-            border
-              ? 'border-solid border-[1px] border-btnbg bg-white'
-              : outerBgColor
-          }`}
+          className={`select-none text-1xl md:text-3xl color-btnbg ${textCustomClassName}`}
         >
-          <span className={`select-none text-1xl md:text-3xl ${textColor}`}>
-            {buttonText}
-          </span>
-        </div>
-
-        <div
-          onClick={onClick}
-          style={{
-            width: 'fit-content',
-            whiteSpace: 'nowrap', // 强制不换行
-            overflow: 'hidden', // 溢出隐藏
-            textOverflow: 'ellipsis', // 文字溢出省略
-          }}
-          className={`z-1 absolute font-bold left-[10px] right-0 top-[10px]   cursor-pointer ${buttonPadding} ${
-            border
-              ? 'border-solid border-[1px] border-btnbg bg-white'
-              : innerBgColor
-          }`}
-        >
-          <span className={`select-none opacity-0 text-1xl md:text-3xl`}>
-            {buttonText}
-          </span>
+          {children}
         </div>
       </div>
     </div>

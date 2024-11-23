@@ -1,5 +1,4 @@
 import React from 'react';
-import DoubleBox from '@/components/common/DoubleBox';
 import Image from 'next/image';
 
 const list = [
@@ -14,19 +13,16 @@ const list = [
 ];
 const About: React.FC = () => {
   return (
-    <div className="px-6 md:px-28 md:mt-10 ">
+    <div className="px-6 mt-5 md:px-28 md:mt-10 ">
       <div className="border-[1px] border-solid border-btnbg p-1 md:p-2">
         <div className="border-[1px] border-solid border-btnbg p-2 md:p-10">
           <div className="text-4xl text-center md:text-left">
             PHANTA BEAR vs. PHANTACi
           </div>
-          <div className="grid grid-cols-4 mt-5 ">
+          <div className="grid grid-cols-3  md:grid-cols-4 mt-5 ">
             {list.map((item) => (
-              <div className="items-center justify-center flex" key={item}>
-                <DoubleBox
-                  offset={5}
-                  customerClassName=" w-[100px] md:w-[150px] lg:w-[200px] xl:w-[250px] 2xl:w-[300px] aspect-square "
-                >
+              <div className="items-center justify-center flex mt-5" key={item}>
+                <div className="flex items-center justify-center  w-[80px] md:w-[120px] lg:w-[160px] xl:w-[200px] 2xl:w-[250px] aspect-square shadow-[3px_3px_0_0_theme(colors.btnbg)] md:shadow-[7px_7px_0_0_theme(colors.btnbg)] border-[1px] border-btnbg border-solid">
                   <Image
                     src={item}
                     width={1}
@@ -34,7 +30,7 @@ const About: React.FC = () => {
                     alt="xx"
                     layout="responsive"
                   />
-                </DoubleBox>
+                </div>
               </div>
             ))}
           </div>

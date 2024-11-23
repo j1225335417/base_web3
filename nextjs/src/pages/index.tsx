@@ -63,14 +63,21 @@ const Index = () => {
           src="https://ezek.io/static/phanta-5c2ead1b2f692f62608121e219ccdf95.png"
         ></Image>
 
-        <Button
-          customerClassName={`${
+        <div
+          className={`${
             videoLoaded
               ? 'bottom-36 opacity-100 duration-300'
               : 'bottom-0 opacity-0'
-          } absolute left-1/2 -translate-x-1/2 md:w-[316px] w-[185px] bottom-36 opacity-100 duration-300`}
-          onClick={() => clickOpensea()}
-        />
+          } absolute left-1/2 -translate-x-1/2  bottom-36 opacity-100 duration-300`}
+        >
+          <Button
+            customClassName="md:shadow-[7px_7px_0_0_theme(colors.btnbg)]"
+            onClick={() => clickOpensea()}
+          >
+            去OPENSEA查看
+          </Button>
+        </div>
+
         {/* </div> */}
 
         {/* <div

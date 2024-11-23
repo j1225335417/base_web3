@@ -19,7 +19,7 @@
 }
 
 .dark .ant-pagination .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-ellipsis {
-  color: #ffffff !important; /* 自定义文字颜色 */
+  color: #ffffff !important; 
 }
 
 .ant-pagination-item-active a {

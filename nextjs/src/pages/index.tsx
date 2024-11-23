@@ -77,27 +77,6 @@ const Index = () => {
             去OPENSEA查看
           </Button>
         </div>
-
-        {/* </div> */}
-
-        {/* <div
-          className={`transition-all duration-200 transform active:scale-95 relative ${
-            videoLoaded ? 'bottom-20 opacity-100 ' : 'bottom-0 opacity-0 '
-          }`}
-        >
-          <div
-            onClick={clickOpensea}
-            className=" font-bold bottom-[20%] absolute left-1/2 -translate-x-[calc(50%-4px)]  md:-translate-x-[calc(50%-10px)]  bg-btnbg px-7 md:px-16 py-4 box-border cursor-pointer"
-          >
-            <span className="text-1xl md:text-3xl">去OPENSEA查看</span>
-          </div>
-          <div
-            onClick={clickOpensea}
-            className=" focus:outline-none  font-bold bottom-[calc(20%+4px)] md:bottom-[calc(20%+10px)] absolute left-1/2 transform  -translate-x-1/2 bg-[#ffffff]  px-7 md:px-16 py-4 border-[1px] border-solid border-btnbg cursor-pointer"
-          >
-            <span className="text-1xl md:text-3xl">去OPENSEA查看</span>
-          </div>
-        </div> */}
       </div>
       <div className="px-6 md:px-28  w-full overflow-hidden">
         <div className="flex pt-10 justify-center items-center ">
@@ -118,7 +97,7 @@ const Index = () => {
                 alt="PHANTA BEAR"
                 className="w-full aspect-square object-cover mb-4"
               />
-              <h3 className="text-lg font-bold text-blue-500">{item.title}</h3>
+              <h3 className="text-lg font-bold text-btnbg">{item.title}</h3>
               <p className="text-gray-500 text-center mt-2">{item.desc}</p>
             </div>
           ))}

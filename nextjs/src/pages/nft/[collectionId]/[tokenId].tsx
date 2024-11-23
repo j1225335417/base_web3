@@ -60,7 +60,7 @@ const NFTDetails = () => {
   }
 
   return (
-    <div className="bg-[#f5f7ff] flex flex-col items-center p-4 sm:px-6 lg:px-28">
+    <div className=" flex flex-col items-center p-4 sm:px-6 lg:px-28">
       {/* 返回按钮 */}
       <div
         className="self-start mb-4 flex items-center cursor-pointer text-2xl sm:text-3xl font-bold"
@@ -118,7 +118,7 @@ const NFTDetails = () => {
                   key={key}
                   className="border-blue-500 rounded-md  flex mb-2"
                 >
-                  <div className="text-base sm:text-lg font-bold py-1 border-solid border-[1px] border-btnbg w-[120px] sm:w-[150px] flex pl-5 justify-start bg-[#edefff]">
+                  <div className="dark:text-black text-base sm:text-lg font-bold py-1 border-solid border-[1px] border-btnbg w-[120px] sm:w-[150px] flex pl-5 justify-start bg-[#edefff]">
                     {key}
                   </div>
                   <div className="ml-5 text-base sm:text-lg py-1 flex items-center justify-center rounded-sm">

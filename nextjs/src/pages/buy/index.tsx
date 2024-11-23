@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Button from '@/components/common/Button';
 
 import { bearBg, add, reduce } from '@/assets/buy';
@@ -59,11 +59,11 @@ const PhantaCard = () => {
   }, []);
 
   const LeftContent = (
-    <div className="w-[300px] h-[470px] mt-10 border-l-[2px] border-t-[1px] border-b-[1px] border-r-[1px] border-solid border-btnbg">
-      <div className="w-full h-full shadow-[7px_7px_0_0_theme(colors.btnbg)] md:shadow-[10px_10px_0_0_theme(colors.btnbg)]">
+    <div className="w-[300px] h-[470px] mt-10 border-l-[2px] border-t-[1px] border-b-[1px] border-r-[1px] border-solid border-btnbg ">
+      <div className="w-full h-full shadow-[7px_7px_0_0_theme(colors.btnbg)] md:shadow-[10px_10px_0_0_theme(colors.btnbg)] dark:bg-background-dark">
         <div
           style={{ background: `url('${bearBg}')` }}
-          className={`w-full aspect-square  relative`}
+          className={`w-full aspect-square  relative `}
         >
           <img src="https://ezek.io/static/bear-9221d75dd46f0511b0af9d43548a5da5.png" />
           <img

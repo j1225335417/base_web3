@@ -23,7 +23,7 @@ const Button = ({
         className={`shadow-[3px_3px_0_0_theme(colors.btnbg)] font-bold bg-white cursor-pointer ${buttonPadding} ${border} ${customClassName}`}
       >
         <div
-          className={`select-none text-1xl md:text-3xl color-btnbg ${textCustomClassName}`}
+          className={`select-none text-1xl md:text-3xl color-btnbg dark:text-btnbg ${textCustomClassName}`}
         >
           {children}
         </div>

@@ -117,13 +117,16 @@ const Header: React.FC = () => {
         <div className="hidden md:block">
           <Navbar ref={navRef} />
         </div>
-        <Theme themeChange={setTheme} />
+
         <div className="ml-3 mr-3 hidden xl:block">
           <ConnectButton
             chainStatus={'none'}
             showBalance={false}
             accountStatus={'address'}
           />
+        </div>
+        <div className="px-5">
+          <Theme themeChange={setTheme} />
         </div>
         <Language customerClassName="hidden md:block" />
         <div className="drawer md:hidden">
@@ -181,6 +184,7 @@ const Header: React.FC = () => {
                       closeDrawer();
                     }}
                   />
+
                   <Language customerClassName="absolute bottom-0 left-0 right-0" />
                 </div>
               </div>

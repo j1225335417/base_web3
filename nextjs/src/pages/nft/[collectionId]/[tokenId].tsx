@@ -118,10 +118,10 @@ const NFTDetails = () => {
                   key={key}
                   className="border-blue-500 rounded-md  flex mb-2"
                 >
-                  <div className="dark:text-black text-base sm:text-lg font-bold py-1 border-solid border-[1px] border-btnbg w-[120px] sm:w-[150px] flex pl-5 justify-start bg-[#edefff]">
+                  <div className="dark:text-black text-sm sm:text-lg font-bold py-1 border-solid border-[1px] border-btnbg w-[120px] sm:w-[150px] flex pl-3 justify-start bg-[#edefff]">
                     {key}
                   </div>
-                  <div className="ml-5 text-base sm:text-lg py-1 flex items-center justify-center rounded-sm">
+                  <div className="ml-5 text-sm sm:text-lg py-1 flex items-center justify-center rounded-sm">
                     {typeof value === 'string' ? value : JSON.stringify(value)}
                   </div>
                 </div>

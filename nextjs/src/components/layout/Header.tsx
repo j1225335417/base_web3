@@ -129,7 +129,7 @@ const Header: React.FC = () => {
           <Theme themeChange={setTheme} />
         </div>
         <Language customerClassName="hidden md:block" />
-        <div className="drawer md:hidden">
+        <div className="drawer md:hidden" style={{ width: 'auto' }}>
           <input
             id="my-drawer"
             ref={drawerCloseRef}

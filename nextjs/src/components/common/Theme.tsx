@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 
 const Home: React.FC<{
   themeChange?: (theme: string | null) => void;
-}> = ({ themeChange }) => {
+  isIndexHeader: boolean;
+}> = ({ themeChange, isIndexHeader }) => {
   const [theme, setTheme] = useState<string | null>(null);
   const { t } = useTranslation();
 
@@ -57,6 +58,7 @@ const Home: React.FC<{
       onClick={toggleTheme}
       className="p-1 transition-all duration-300 ease-in-out hover:scale-110 border-solid border-[1px] border-btnbg dark:border-white rounded-full"
     >
+      {isIndexHeader}
       {theme === 'light' ? (
         // 白天模式的太阳图标
         <svg
@@ -65,7 +67,9 @@ const Home: React.FC<{
           viewBox="0 0 24 24"
           strokeWidth="2"
           stroke="currentColor"
-          className="w-8 h-8 text-btnbg transform transition duration-500 ease-in-out"
+          className={`w-8 h-8 ${
+            !isIndexHeader ? 'text-white' : 'text-btnbg '
+          }transform transition duration-500 ease-in-out`}
         >
           <circle
             cx="12"

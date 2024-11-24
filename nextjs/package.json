@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:product": "dotenv -e .env.production  next dev",
     "build": "next build",
-    "start": "next start",
+    "start": " next start",
     "lint": "next lint"
   },
   "dependencies": {

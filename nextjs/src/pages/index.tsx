@@ -91,7 +91,10 @@ const Index = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6  md:border-solid md:border-[1px] md:border-btnbg p-4">
           {introductions.map((item) => (
-            <div className="flex flex-col items-center bg-white rounded-lg shadow-md p-4">
+            <div
+              key={item.title}
+              className="flex flex-col items-center bg-white rounded-lg shadow-md p-4"
+            >
               <img
                 src={item.url}
                 alt="PHANTA BEAR"

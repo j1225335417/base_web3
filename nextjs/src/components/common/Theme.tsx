@@ -52,13 +52,12 @@ const Home: React.FC<{
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme); // 保存到 localStorage
   };
-
+  console.log('isIndexHeader', isIndexHeader);
   return (
     <button
       onClick={toggleTheme}
       className="p-1 transition-all duration-300 ease-in-out hover:scale-110 border-solid border-[1px] border-btnbg dark:border-white rounded-full"
     >
-      {isIndexHeader}
       {theme === 'light' ? (
         // 白天模式的太阳图标
         <svg
@@ -67,9 +66,7 @@ const Home: React.FC<{
           viewBox="0 0 24 24"
           strokeWidth="2"
           stroke="currentColor"
-          className={`w-8 h-8 ${
-            !isIndexHeader ? 'text-white' : 'text-btnbg '
-          }transform transition duration-500 ease-in-out`}
+          className={`w-8 h-8 transform transition duration-500 ease-in-out`}
         >
           <circle
             cx="12"
@@ -93,7 +90,7 @@ const Home: React.FC<{
           viewBox="0 0 24 24"
           strokeWidth="2"
           stroke="currentColor"
-          className="w-8 h-8 text-white transform transition duration-500 ease-in-out"
+          className="w-8 h-8  transform transition duration-500 ease-in-out"
         >
           <path
             strokeLinecap="round"

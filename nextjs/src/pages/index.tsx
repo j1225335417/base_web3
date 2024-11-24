@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { setShowVideo } from '@/redux/modules/common';
 import { useDispatch } from 'react-redux';
 import { showNotification } from '@/redux/modules/notificationSlice';
@@ -31,7 +31,9 @@ const introductions = [
 const Index = () => {
   const dispatch = useDispatch();
   const [videoLoaded, setVideoLoaded] = useState(false);
-
+  useEffect(() => {
+    fetch('/api/auth/nonce');
+  }, []);
   const clickOpensea = () => {
     dispatch(
       showNotification({

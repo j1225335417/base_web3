@@ -8,7 +8,7 @@ dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.setGlobalPrefix('api');
+  // app.setGlobalPrefix('api');
   app.enableCors({
     origin: 'http://localhost:3000', // 允许来自特定源的请求
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',

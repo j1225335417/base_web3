@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
 import { AUTH_TOKEN } from '@/constants/storage';
 // 初始化 Axios 实例
 const apiClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+  // baseURL: process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000/',
   timeout: 10000, // 超时时间
 });
 

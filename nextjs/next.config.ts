@@ -25,6 +25,14 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'phanta-bear-nft.matrixlabs.org' },
     ],
   },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/api/:path*',
+  //       destination: `${process.env.NEXT_PUBLIC_BASE_URL}/:path*`, // 这里的 HOST 应该是你后端的地址
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;

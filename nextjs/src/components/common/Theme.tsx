@@ -3,8 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 const Home: React.FC<{
   themeChange?: (theme: string | null) => void;
-  isIndexHeader: boolean;
-}> = ({ themeChange, isIndexHeader }) => {
+}> = ({ themeChange }) => {
   const [theme, setTheme] = useState<string | null>(null);
   const { t } = useTranslation();
 
@@ -52,7 +51,6 @@ const Home: React.FC<{
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme); // 保存到 localStorage
   };
-  console.log('isIndexHeader', isIndexHeader);
   return (
     <button
       onClick={toggleTheme}

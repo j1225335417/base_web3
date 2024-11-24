@@ -126,7 +126,7 @@ const Header: React.FC = () => {
           />
         </div>
         <div className="px-5">
-          <Theme isIndexHeader={isIndexHeader} themeChange={setTheme} />
+          <Theme themeChange={setTheme} />
         </div>
         <Language customerClassName="hidden md:block" />
         <div className="drawer md:hidden" style={{ width: 'auto' }}>
